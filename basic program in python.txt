@@ -1,0 +1,255 @@
+Sure, I'll provide a single Python file that includes all 30 basic Python programs. You can copy this code into a file named `basic_programs.py` and run it as needed.
+
+Here's the complete Python code:
+
+```python
+# basic_programs.py
+
+# 1. Hello World
+def hello_world():
+    print("Hello, World!")
+
+# 2. Add Two Numbers
+def add_two_numbers():
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+    print(f"The sum is: {num1 + num2}")
+
+# 3. Simple Calculator
+def simple_calculator():
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+    operator = input("Enter operator (+, -, *, /): ")
+    if operator == '+':
+        print(f"Result: {num1 + num2}")
+    elif operator == '-':
+        print(f"Result: {num1 - num2}")
+    elif operator == '*':
+        print(f"Result: {num1 * num2}")
+    elif operator == '/':
+        print(f"Result: {num1 / num2}")
+    else:
+        print("Invalid operator")
+
+# 4. Check Even or Odd
+def check_even_odd():
+    num = int(input("Enter a number: "))
+    if num % 2 == 0:
+        print(f"{num} is even.")
+    else:
+        print(f"{num} is odd.")
+
+# 5. Factorial of a Number
+def factorial():
+    num = int(input("Enter a number: "))
+    fact = 1
+    for i in range(1, num + 1):
+        fact *= i
+    print(f"Factorial of {num} is {fact}")
+
+# 6. Fibonacci Series
+def fibonacci_series():
+    n = int(input("Enter the number of terms: "))
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+    print()
+
+# 7. Check Prime Number
+def check_prime():
+    num = int(input("Enter a number: "))
+    if num > 1:
+        for i in range(2, num):
+            if num % i == 0:
+                print(f"{num} is not a prime number")
+                break
+        else:
+            print(f"{num} is a prime number")
+    else:
+        print(f"{num} is not a prime number")
+
+# 8. Prime Numbers in a Range
+def prime_in_range():
+    lower = int(input("Enter lower range: "))
+    upper = int(input("Enter upper range: "))
+    for num in range(lower, upper + 1):
+        if num > 1:
+            for i in range(2, num):
+                if num % i == 0:
+                    break
+            else:
+                print(num, end=" ")
+    print()
+
+# 9. Find Largest of Three Numbers
+def largest_of_three():
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
+    num3 = float(input("Enter third number: "))
+    if num1 >= num2 and num1 >= num3:
+        print(f"{num1} is the largest.")
+    elif num2 >= num1 and num2 >= num3:
+        print(f"{num2} is the largest.")
+    else:
+        print(f"{num3} is the largest.")
+
+# 10. Reverse a Number
+def reverse_number():
+    num = int(input("Enter a number: "))
+    reversed_num = 0
+    while num > 0:
+        digit = num % 10
+        reversed_num = reversed_num * 10 + digit
+        num //= 10
+    print(f"Reversed number is: {reversed_num}")
+
+# 11. Palindrome Number
+def palindrome_number():
+    num = int(input("Enter a number: "))
+    if str(num) == str(num)[::-1]:
+        print(f"{num} is a palindrome.")
+    else:
+        print(f"{num} is not a palindrome.")
+
+# 12. Sum of Digits
+def sum_of_digits():
+    num = int(input("Enter a number: "))
+    total = 0
+    while num > 0:
+        digit = num % 10
+        total += digit
+        num //= 10
+    print(f"Sum of digits is: {total}")
+
+# 13. Armstrong Number
+def armstrong_number():
+    num = int(input("Enter a number: "))
+    sum = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** 3
+        temp //= 10
+    if num == sum:
+        print(f"{num} is an Armstrong number")
+    else:
+        print(f"{num} is not an Armstrong number")
+
+# 14. Power of a Number
+def power_of_number():
+    base = int(input("Enter base: "))
+    exponent = int(input("Enter exponent: "))
+    result = 1
+    for _ in range(exponent):
+        result *= base
+    print(f"{base} to the power of {exponent} is: {result}")
+
+# 15. Sum of First N Natural Numbers
+def sum_n_natural():
+    n = int(input("Enter a positive integer: "))
+    sum = n * (n + 1) // 2
+    print(f"Sum of first {n} natural numbers is: {sum}")
+
+# 16. Sum of N Odd Numbers
+def sum_n_odd():
+    n = int(input("Enter the value of N: "))
+    sum = 0
+    for i in range(1, 2 * n, 2):
+        sum += i
+    print(f"Sum of first {n} odd numbers is: {sum}")
+
+# 17. Sum of N Even Numbers
+def sum_n_even():
+    n = int(input("Enter the value of N: "))
+    sum = 0
+    for i in range(2, 2 * n + 1, 2):
+        sum += i
+    print(f"Sum of first {n} even numbers is: {sum}")
+
+# 18. Count Digits in a Number
+def count_digits():
+    num = int(input("Enter a number: "))
+    count = 0
+    while num > 0:
+        num //= 10
+        count += 1
+    print(f"Number of digits: {count}")
+
+# 19. Find GCD of Two Numbers
+def find_gcd():
+    import math
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+    gcd = math.gcd(num1, num2)
+    print(f"GCD of {num1} and {num2} is: {gcd}")
+
+# 20. Find LCM of Two Numbers
+def find_lcm():
+    def lcm(x, y):
+        if x > y:
+            greater = x
+        else:
+            greater = y
+        while True:
+            if greater % x == 0 and greater % y == 0:
+                return greater
+            greater += 1
+
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+    print(f"LCM is: {lcm(num1, num2)}")
+
+# 21. Find ASCII Value of a Character
+def ascii_value():
+    char = input("Enter a character: ")
+    print(f"ASCII value of {char} is: {ord(char)}")
+
+# 22. Generate Multiplication Table
+def multiplication_table():
+    num = int(input("Enter a number: "))
+    for i in range(1, 11):
+        print(f"{num} x {i} = {num * i}")
+
+# 23. Display a Number in Reverse
+def display_reverse():
+    num = int(input("Enter a number: "))
+    reversed_num = str(num)[::-1]
+    print(f"Reversed number: {reversed_num}")
+
+# 24. Check if a String is a Palindrome
+def string_palindrome():
+    str_input = input("Enter a string: ")
+    if str_input == str_input[::-1]:
+        print(f"{str_input} is a palindrome.")
+    else:
+        print(f"{str_input} is not a palindrome.")
+
+# 25. Count Vowels in a String
+def count_vowels():
+    str_input = input("Enter a string: ")
+    count = sum(1 for char in str_input if char.lower() in 'aeiou')
+    print(f"Number of vowels: {count}")
+
+# 26. Find the Largest Element in an Array
+def largest_in_array():
+    arr = list(map(int, input("Enter numbers separated by space: ").split()))
+    print(f"Largest element is: {max(arr)}")
+
+# 27. Calculate the Sum of Elements in an Array
+def sum_of_array():
+    arr = list(map(int, input("Enter numbers separated by space: ").split()))
+    print(f"Sum of elements: {sum(arr)}")
+
+# 28. Find the Second Largest Element in an Array
+def second_largest_in_array():
+    arr = list(map(int, input("Enter numbers separated by space: ").split()))
+    first, second = float('-inf'), float('-inf')
+    for num in arr:
+        if num > first:
+            second = first
+            first = num
+        elif num > second and num != first:
+            second = num
+    print(f"Second largest element is: {second}")
+
